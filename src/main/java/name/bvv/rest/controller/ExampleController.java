@@ -16,13 +16,13 @@ public class ExampleController
     )
     {
         return "HELLO " + name;
-    }
+}
 
-    @RequestMapping(value = "/main", method = RequestMethod.POST, produces = "application/json")
-    public String main(
-            @RequestBody String body
+    @RequestMapping(value = "/post", method = RequestMethod.POST, produces = "application/json")
+    public @ResponseBody Message post(
+            @RequestBody Message body
     )
     {
-        return "BODY: " + body;
+        return body;
     }
 }
